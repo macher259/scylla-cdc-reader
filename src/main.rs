@@ -6,7 +6,7 @@ const DEFAULT_SCYLLA_URI: &str = "172.17.0.2:9042";
 #[tokio::main]
 async fn main() {
     let stream_id = parse_stream_id(env::args()).await.unwrap_or_else(|e| {
-        println!("{}", e);
+        eprintln!("{}", e);
         process::exit(1);
     });
 
